@@ -46,7 +46,7 @@ describe('Expected', () => {
 
     it('Should call callback when expectation for expect() calls passed', (done) => {
         let called = false;
-        let err = undefined;
+        let err;
         const expect = expected((e) => {
             called = true;
             err = e;
