@@ -1,6 +1,6 @@
 {
   "name": "chai-expect-expected",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Chai expect wrapper to assert number of expect() invocations in test ",
   "main": "index.js",
   "repository": {
