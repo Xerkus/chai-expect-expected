@@ -1,0 +1,42 @@
+{
+  "name": "chai-expect-expected",
+  "version": "0.0.1",
+  "description": "Chai expect wrapper to assert number of expect() invocations in test ",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xerkus/chai-expect-expected.git"
+  },
+  "keywords": [
+    "chai",
+    "test",
+    "testing"
+  ],
+  "author": "Aleksei Khudiakov (http://github.com/Xerkus)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Xerkus/chai-expect-expected/issues"
+  },
+  "homepage": "https://github.com/Xerkus/chai-expect-expected#readme",
+  "engines": {
+    "node": ">=6.0"
+  },
+  "dependencies": {
+    "assertion-error": "^1.0.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "mocha": "^3.2.0"
+  },
+  "peerDependencies": {
+    "chai": "*"
+  },
+  "scripts": {
+    "lint": "eslint index.js lib/ tests/",
+    "mocha": "mocha --bail --check-leaks tests/",
+    "test": "npm run lint -s && npm run mocha -s"
+  }
+}
