@@ -44,6 +44,38 @@ describe('Expected', () => {
         }).to.throw(chai.AssertionError, /at most 2/);
     });
 
+    it('Should fail on less than minimum expected expect() calls', () => {
+        const expect = expected().atLeast(2).atMost(3);
+
+        expect(true).to.be.true;
+
+        chai.expect(() => {
+            expect.done();
+        }).to.throw(chai.AssertionError, /at least 2/);
+    });
+
+    it('Should fail on more than maximum expected expect() calls', () => {
+        const expect = expected().atMost(2).atLeast(1);
+
+        expect(true).to.be.true;
+        expect(false).to.be.false;
+        expect(null).to.be.null;
+
+        chai.expect(() => {
+            expect.done();
+        }).to.throw(chai.AssertionError, /at most 2/);
+    });
+
+    it('Should fail when no expect() calls are allowed', () => {
+        const expect = expected().exact(0);
+
+        expect(true).to.be.true;
+
+        chai.expect(() => {
+            expect.done();
+        }).to.throw(chai.AssertionError, /at most 0/);
+    });
+
     it('Should call callback when expectation for expect() calls passed', (done) => {
         let called = false;
         let err;
